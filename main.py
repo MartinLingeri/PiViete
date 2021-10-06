@@ -40,16 +40,16 @@ class Approximation:
         b7 = self.addButton(7)
         b8 = self.addButton(8)
         b9 = self.addButton(9)
+        b_clear = self.addButton('C')
         b_equal = self.addButton('=')
 
         row1 = [b7, b8, b9]
         row2 = [b4, b5, b6]
         row3 = [b1, b2, b3]
-        b0.grid(row=4, column=1, columnspan=1)
-        b_equal.grid(row=4, column=2, columnspan=1)
+        row4 = [b_clear, b0, b_equal]
 
         r = 1
-        for row in [row1, row2, row3]:
+        for row in [row1, row2, row3, row4]:
             c = 0
             for button in row:
                 button.grid(row=r, column=c, columnspan=1)
@@ -62,7 +62,10 @@ class Approximation:
     def clickButton(self, value):
         steps = str(self.entry.get())
 
-        if value == '=':
+        if value == 'C':
+            self.before = 'C'
+            self.entry.delete(-1, END)
+        elif value == '=':
             self.before = '='
             answer = str(approximationPi(int(steps)))
             self.entry.delete(-1, END)
