@@ -24,7 +24,7 @@ class Approximation:
         self.master = window
         window.title("Viete Approximation Pi")
         window.iconbitmap('Pi_icon.ico')
-        self.entry = Entry(window, width=46, borderwidth=3)
+        self.entry = Entry(window, width=33, borderwidth=3)
         self.entry.grid(row=0, column=0, columnspan=4, padx=5, pady=5)
         self.createButton()
         self.before = ''
