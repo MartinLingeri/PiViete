@@ -1,10 +1,10 @@
 import math
-from tkinter import *
+from tkinter import Tk, END, Entry, Button
 
 
 def approximationPi(steps):
     if steps == 0:
-        return 0
+        return 2
     result = 2 * (2 / math.sqrt(2))
     root = math.sqrt(2)
     i = 0
